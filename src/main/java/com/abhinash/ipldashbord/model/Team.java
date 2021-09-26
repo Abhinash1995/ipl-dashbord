@@ -1,11 +1,14 @@
 package com.abhinash.ipldashbord.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.util.List;
 
+
+@Entity
 public class Team {
 
     @Id
@@ -15,12 +18,17 @@ public class Team {
     private long totalMatches;
     private long totalWins;
 
+    //Telling it's not field for persistence just ignore while creating entry to db
     @Transient
     private List<Match> matches;
 
     public Team(String teamName, long totalMatches) {
         this.teamName = teamName;
         this.totalMatches = totalMatches;
+    }
+
+    public Team() {
+
     }
 
     public long getId() {

@@ -7,8 +7,11 @@ import java.time.LocalDate;
 
 public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
+    /*
+     Convert MatchInput returned from Reader TO Match Which will be used by writer Later
+     */
     @Override
-    public Match process(MatchInput matchInput) throws Exception {
+    public Match process(MatchInput matchInput) {
 
         Match match = new Match();
         match.setId(Long.parseLong(matchInput.getId()));
