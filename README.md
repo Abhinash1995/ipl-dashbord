@@ -7,11 +7,11 @@ Browse your favorite IPL teams and access their past games details, wins and los
 
 ### Team Page
 
-![Team Page Page](/README/team-page.jpg)
+
 
 ### Matches Page
 
-![Matches Page](/README/matches-page.jpg)
+
 
 ## Technologies
 
