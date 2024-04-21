@@ -1,0 +1,39 @@
+i have a txt file each line is seperated by semicolon ;
+
+ControlRecord:
+example: 102282024CIC052024-02-28-12.43.48.772468 ;
+only one record per file with line starting with '1':
+position 1 length 1 is record type = 1
+position 2 length 13 is orderId = 02282024CIC05
+position 15 length 26 is order date = 2024-02-28-12.43.48.772468
+
+
+ControlBatch:
+multiple records start with '3' per file :
+example: 3000102282024HNBPY
+position 1 length 1 is record type = 3
+position 2 length 4 is batch header = 0001
+position 6 length 8 is batch date = 02282024
+position 14 length 5 is company = HNBPY
+
+RecordDetails:
+multiple records start with '4' per batch per file :
+example: 400010011111000691108 00000105400 02292024022820247
+position 1 length 1 is record type = 4
+position 2 length 4 is batch number should match the batch header record from control batch = 0001
+position 6 length 3 is transaction number in batch = 001
+position 9 length 2 master company number   = 08
+position 11 length 1 id type   = 08
+position 12 length 10 account number  = 08
+position 22 length 7 spaces
+position 29 length 11 amount from payment
+position 40 length 1 spaces
+position 41 length 8 due date
+position 49 length 8 post mark date
+
+BatchTrailer:
+only one  records start with '7' per batch:
+700010000002000000105400
+position 1 length 1 is record type = 7
+position 2 length 4 is batch number should match the batch header record = 0001
+position 6 length 7 total batch record count, count of record starting with 4 and 5
